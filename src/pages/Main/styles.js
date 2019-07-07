@@ -64,10 +64,10 @@ export const Bio = styled.Text.attrs({
   numberOfLines: 2,
 })`
   font-size: 13px;
+  line-height: 18px;
   color: #999;
   margin-top: 5px;
   text-align: center;
-  line-height: 18px;
 `;
 
 export const ProfileButton = styled(RectButton)`

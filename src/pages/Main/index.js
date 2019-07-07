@@ -44,7 +44,7 @@ export default class Main extends Component {
     }
   }
 
-  async componentDidUpdate(_, prevState) {
+  componentDidUpdate(_, prevState) {
     const { users } = this.state;
 
     if (prevState.users !== users) {
@@ -55,9 +55,7 @@ export default class Main extends Component {
   handleAddUser = async () => {
     const { users, newUser } = this.state;
 
-    this.setState({
-      loading: true,
-    });
+    this.setState({ loading: true });
 
     const response = await api.get(`/users/${newUser}`);
 
@@ -85,6 +83,7 @@ export default class Main extends Component {
 
   render() {
     const { users, newUser, loading } = this.state;
+
     return (
       <Container>
         <Form>
@@ -105,6 +104,7 @@ export default class Main extends Component {
             )}
           </SubmitButton>
         </Form>
+
         <List
           data={users}
           keyExtractor={user => user.login}
